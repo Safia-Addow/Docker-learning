@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or "Flask + Redis App" }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    n
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <nav class="bg-indigo-600 text-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <div class="flex items-center space-x-3">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="w-10 h-10 rounded-full">
+                <span class="text-2xl font-bold">Coderco Challenge</span>
+            </div>
+            <div class="space-x-6 text-lg">
+                <a href="/" class="hover:underline">🏠 Home</a>
+                <a href="/welcome" class="hover:underline">🎉 Welcome</a>
+                <a href="/about" class="hover:underline">ℹ️ About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <main class="flex-1 container mx-auto mt-8 p-6 bg-white rounded-xl shadow-lg">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-10 text-center text-sm text-gray-500 pb-4">
+        © 2025 Coderco Challenge | Built with ❤️ using Flask & Redis
+    </footer>
+
+</body>
+</html>
