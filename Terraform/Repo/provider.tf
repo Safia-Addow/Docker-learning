@@ -10,6 +10,8 @@ terraform {
    bucket="safiaaddow-terraform1"
    key = "terraform.tfstate"
    region ="us-west-1"
+   dynamodb_table = "mybackend"
+    encrypt        = true
   }
 }
 
