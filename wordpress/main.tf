@@ -12,6 +12,17 @@ terraform {
   required_version = ">= 1.4.0"
 }
 
+# S3 backend configuration goes in its own terraform block
+terraform {
+  backend "s3" {
+    bucket         = "safiaaddow-terraform1"
+    key            = "terraform.tfstate"
+    region         = "us-west-1"
+    dynamodb_table = "mybackend"
+    encrypt        = true
+  }
+}
+
 provider "aws" {
   region = var.aws_region
 }
